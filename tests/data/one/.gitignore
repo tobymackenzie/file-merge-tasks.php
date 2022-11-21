@@ -1,0 +1,9 @@
+# comment
+*.swo
+*~
+.DS_Store
+
+# the foo
+/foo
+!/foo/bar
+/vendor

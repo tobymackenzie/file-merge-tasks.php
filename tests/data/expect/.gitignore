@@ -1,0 +1,12 @@
+# comment
+*.swo
+*.swp
+*~
+.DS_Store
+/.phpunit.result.cache
+# comment
+/composer.lock
+# the foo
+/foo
+!/foo/bar
+/vendor

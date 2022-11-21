@@ -9,8 +9,7 @@ class TestCase extends Base{
 	}
 	public function tearDown() :void{
 		chdir(__DIR__);
-		exec('rm -r ' . $this->getTmpPath('*'));
-		rmdir($this->getTmpPath());
+		exec('rm -r ' . $this->getTmpPath());
 	}
 	protected function getDataPath($subPath = null){
 		$path =  __DIR__ . '/data';

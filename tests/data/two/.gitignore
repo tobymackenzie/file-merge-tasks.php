@@ -1,0 +1,5 @@
+*.swp
+/.phpunit.result.cache
+# comment
+/composer.lock
+/vendor
