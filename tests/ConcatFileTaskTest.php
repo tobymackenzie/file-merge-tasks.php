@@ -1,11 +1,11 @@
 <?php
 namespace TJM\FileMergeTasks\Tests;
-use TJM\FileMergeTasks\ContcatFileTask;
+use TJM\FileMergeTasks\ConcatFileTask;
 
-class ContcatFileTaskTest extends TestCase{
+class ConcatFileTaskTest extends TestCase{
 	public function testIntoNewFile(){
 		$outFile = $this->getTmpPath('/out.txt');
-		(new ContcatFileTask([
+		(new ConcatFileTask([
 			$this->getDataPath('file1.txt'),
 			$this->getDataPath('file2.txt'),
 		], $outFile))->do();
@@ -15,7 +15,7 @@ class ContcatFileTaskTest extends TestCase{
 		$outFile = $this->getTmpPath('/out.txt');
 		$prefix = "Hello World!\n";
 		file_put_contents($outFile, "Hello World!\n");
-		(new ContcatFileTask([
+		(new ConcatFileTask([
 			$this->getDataPath('file1.txt'),
 			$this->getDataPath('file2.txt'),
 		], $outFile))->do();
@@ -25,7 +25,7 @@ class ContcatFileTaskTest extends TestCase{
 		$outFile = $this->getTmpPath('/out.txt');
 		$prefix = "Hello World!\n";
 		file_put_contents($outFile, "Hello World!\n");
-		(new ContcatFileTask([
+		(new ConcatFileTask([
 			$outFile,
 			$this->getDataPath('file1.txt'),
 			$this->getDataPath('file2.txt'),

@@ -7,7 +7,7 @@ namespace TJM\FileMergeTasks;
 use TJM\ShellRunner\ShellRunner;
 use TJM\TaskRunner\Task;
 
-class ContcatFileTask extends Task{
+class ConcatFileTask extends Task{
 	protected $destination;
 	protected $files;
 	protected $shell;
