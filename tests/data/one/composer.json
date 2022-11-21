@@ -1,0 +1,19 @@
+{
+	"name": "tjm/one"
+	,"authors": [
+		{
+			"name": "Toby Mackenzie"
+			,"email": "public@tobymackenzie.com"
+			,"homepage": "https://www.tobymackenzie.com"
+		}
+	]
+	,"license": "0BSD"
+	,"autoload": {
+		"psr-4": {
+			"TJM\\One\\": "src"
+		}
+	}
+	,"require": {
+		"php": ">=5.4"
+	}
+}
