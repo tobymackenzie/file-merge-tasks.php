@@ -27,16 +27,16 @@ class MergeDirectoryTask extends Task{
 			exec('mkdir -p ' . escapeshellarg($this->destination));
 		}
 		foreach($this->dirs as $dir){
-			if(is_dir($dir)){
+			if(!empty($dir) && is_dir($dir)){
 				foreach(array_diff(scandir($dir), ['.', '..']) as $file){
 					$destPath = $this->destination . '/' . $file;
 					$srcPath = $dir . '/' . $file;
 					if(!file_exists($destPath)){
-						if(is_dir($srcPath)){
+						if(!empty($srcPath) && is_dir($srcPath)){
 							$srcPath .= '/';
 						}
 						exec('cp -a ' . $srcPath . ' ' . $destPath);
-					}elseif(is_dir($srcPath)){
+					}elseif(!empty($srcPath) && is_dir($srcPath)){
 						(new MergeDirectoryTask([$srcPath], $destPath, $this->getOpts()))->do();
 					}else{
 						foreach($this->fileTasks as $key=> $value){
